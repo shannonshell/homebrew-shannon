@@ -1,14 +1,9 @@
 class Shannon < Formula
   desc "Poly-shell built on nushell with seamless bash compatibility"
   homepage "https://github.com/shannonshell/shannon"
-  url "https://github.com/shannonshell/shannon/releases/download/v0.5.7/shannon-0.5.7.tar.gz"
-  sha256 "9ee34faa76b8a60530f7360d172b1094f02a93e022a7d29decf635d90f9b995c"
+  url "https://github.com/shannonshell/shannon/releases/download/v1.0.0/shannon-1.0.0.tar.gz"
+  sha256 "94fae37468806eb764d9416350e4dbc641598fdaa57e69306084f0b62b1da5c0"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/shannonshell/homebrew-shannon/releases/download/shannon-0.5.7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "55961cc18def8b261e7613785c6a150c95878a4fb852b3724af9b30c221eccf1"
-  end
 
   depends_on "rust" => :build
   depends_on :macos
@@ -19,7 +14,7 @@ class Shannon < Formula
 
   test do
     version_output = shell_output("#{bin}/shannon --version")
-    assert_match "0.5.7", version_output
+    assert_match "1.0.0", version_output
     assert_match "nushell 0.113.1", version_output
 
     assert_equal "3", shell_output("#{bin}/shannon -c '1 + 2'").strip
