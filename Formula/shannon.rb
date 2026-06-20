@@ -5,6 +5,11 @@ class Shannon < Formula
   sha256 "9ee34faa76b8a60530f7360d172b1094f02a93e022a7d29decf635d90f9b995c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/shannonshell/homebrew-shannon/releases/download/shannon-0.5.7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "55961cc18def8b261e7613785c6a150c95878a4fb852b3724af9b30c221eccf1"
+  end
+
   depends_on "rust" => :build
   depends_on :macos
 
